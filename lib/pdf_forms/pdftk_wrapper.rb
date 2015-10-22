@@ -94,6 +94,15 @@ module PdfForms
       call_pdftk arguments, 'output', output
     end
 
+    # make input pdf [length] pages
+    #
+    # args: primary_file, length, output
+    def truncate(primary_file, length, output)
+      #TODO:check if greater than length
+      # pdftk in.pdf cat 1-12 14-end output out1.pdf
+      call_pdftk primary_file, 'cat', 1, length, 'output', output
+    end
+
     # stamp one pdf with another
     #
     # args: primary_file, stamp_file, output
