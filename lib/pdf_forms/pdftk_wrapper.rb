@@ -100,7 +100,7 @@ module PdfForms
     def truncate(primary_file, length, output)
       #TODO:check if greater than length
       # pdftk in.pdf cat 1-12 14-end output out1.pdf
-      call_pdftk primary_file, 'cat', 1, length, 'output', output
+      call_pdftk primary_file, 'cat', "1-#{length}", 'output', output
     end
 
     # stamp one pdf with another
